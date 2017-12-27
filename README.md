@@ -1,3 +1,23 @@
+# pycfn
+
+## Inline C functions compiled at runtime
+
+Currently a work in progress.
+
+This is a goofy experiment to play around with ctypes, cffi, and how far one can abuse function use. Don't use this in any manner but as a toy.
+
+### Installation
+
+TODO
+
+### Use
+
+TODO
+
+### How It Works
+
+TODO
+
 ### Thinking out loud
 
 bound or unbound?
