@@ -1,6 +1,4 @@
-# pycfn
-
-## Inline C functions compiled at runtime
+# pycfn: inline C functions compiled at runtime
 
 Currently a work in progress.
 
