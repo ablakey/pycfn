@@ -1,4 +1,7 @@
-from ctypes import c_char_p, c_int, CDLL
+# Importing all types as-is allows use of pycfn without explicit dependency on ctypes by re-importing from here instead.
+from ctypes import (CDLL,
+                    c_char_p, c_char, c_short, c_ushort, c_int, c_uint, c_long, c_ulong, c_longlong, c_ulonglong,
+                    c_float, c_double, c_longdouble)
 from subprocess import run
 from tempfile import mkstemp
 from typing import get_type_hints
@@ -6,14 +9,22 @@ from typing import get_type_hints
 
 GCC_CALL = 'gcc -shared -o {so} -fPIC -xc -'
 
-
 FUNCTION_TEMPLATE = '{restype} {name}({args}) \n{{ {body} \n}}'
 
-
 TYPEMAP = {
+    c_float: 'float',
+    c_double: 'double',
+    c_longdouble: 'long double',
+    c_char: 'char',
+    c_short: 'short',
+    c_ushort: 'unsigned short',
     c_int: 'int',
+    c_uint: 'unsigned int',
+    c_long: 'long',
+    c_ulong: 'unsigned long',
+    c_longlong: 'long long',
+    c_ulonglong: 'unsigned long long',
     c_char_p: 'char*'
-    # TODO: add the rest.
 }
 
 
